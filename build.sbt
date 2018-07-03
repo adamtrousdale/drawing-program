@@ -2,8 +2,10 @@ name := "blank"
 
 version := "1.0-SNAPSHOT"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.12.6"
  
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
 
-libraryDependencies ++= Seq()
+libraryDependencies ++= Seq(
+  "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+)
