@@ -1,4 +1,4 @@
-name := "blank"
+name := "drawing-program"
 
 version := "1.0-SNAPSHOT"
 

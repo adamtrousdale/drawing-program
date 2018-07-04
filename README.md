@@ -1,47 +1,63 @@
-blank
+drawing-program
 =====
 
-Blank Scala project for quick&amp;easy setup. Just clone it and you are ready to go!
+A small command line application to draw a canvas and then add lines and rectangles to it.
 
-## Quick Start
+## To run
 
 ```bash
-> mkdir my-project
-> cd my-project
-> git clone git@github.com:adamtrousdale/scala-sbt-blank.git .
-> sbt
+> sbt run
+> enter command:
 ```
 
-```sbt
-sbt> run
+## To test
+
+```bash
+> sbt test
 ```
 
-## Features
-* [Scala](http://www.scala-lang.org) 2.12
-* [ScalaTest](http://www.scalatest.org) 3.0.5
-* .gitignore with the most common settings
-  
-  
-
-## Prerequisities
-* [SBT](http://www.scala-sbt.org) 1.1.6
-
-## Documentation
-
-### Installing SBT
-* [Mac OS X](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html#mac)
-  * Homebrew is recommended
-* [Windows](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html#installing-sbt)
-* [Linux - Gentoo](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html#gentoo)
+| Command | Description |
+|---|---|
+| ```C w h```  | Create a new canvas of width w and height h   |
+| ```L x1 y1 x2 y2```  | Draw a new line from coordinates (x1, y1) to (x2, y2) horizontally or vertically. Lines are made up of the x character  |
+| ```R x1 y1 x2 y2```  | Draw a new rectangle, with upper left corner at coordinate (x1, y1) and lower right coordinate at (x2, y2). Lines are made up of the x character  |
+| ```Q``` | Quit the program |
 
 
-### REPL
-SBT contains a nice command `console` which allows firing up a REPL (Scala console) with the **project on classpath**.
-That means that you can interactively try your code.
+## Example commands
 
-```
-> sbt
-sbt> console
-scala> import com.czechscala.blank._
-scala> Hello.sayHello
+```bash
+enter command: C 20 5
+----------------------
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+----------------------
+enter command: L 1 3 7 3
+----------------------
+|                    |
+|                    |
+|xxxxxxx             |
+|                    |
+|                    |
+----------------------
+enter command: L 7 1 7 3
+----------------------
+|      x             |
+|      x             |
+|xxxxxxx             |
+|                    |
+|                    |
+----------------------
+enter command: R 15 2 20 5
+----------------------
+|      x             |
+|      x       xxxxxx|
+|xxxxxxx       x    x|
+|              x    x|
+|              xxxxxx|
+----------------------
+enter command: Q
 ```
